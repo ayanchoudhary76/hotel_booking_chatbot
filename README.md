@@ -1,1 +1,3 @@
-# hotel_booking_chatbot
+# Hotel Booking Chatbot
+
+A Python-based chatbot that helps users find hotels by fetching data from Booking.com API using coordinates from OpenCage API.
