@@ -1,17 +1,19 @@
 from src.coordinates import get_coordinates
 from src.hotel_search import search_hotels
 from dotenv import load_dotenv
+load_dotenv()
 import os
 
-# Load API keys from .env
-load_dotenv()
+# Load API keys from environment variables
 OPENCAGE_KEY = os.getenv("OPENCAGE_KEY")
 RAPIDAPI_KEY = os.getenv("RAPIDAPI_KEY")
 RAPIDAPI_HOST = os.getenv("RAPIDAPI_HOST")
 
-# Example usage
-city = "Goa"
+# Take city input from the user
+city = input("Enter city name to search hotels: ").strip()
+
 lat, lng = get_coordinates(city, OPENCAGE_KEY)
+
 if lat and lng:
     result = search_hotels(lat, lng, RAPIDAPI_KEY, RAPIDAPI_HOST)
     print("\n=== TOP 5 HOTELS ===")
