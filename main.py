@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 from dotenv import load_dotenv
 from src.coordinates import get_coordinates
 from src.hotel_search import search_hotels
-
+from datetime import datetime, timedelta
 # Load environment variables
 load_dotenv()
 
