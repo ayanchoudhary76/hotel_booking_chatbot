@@ -27,8 +27,6 @@ def search_hotels(lat, lng, rapidapi_key, rapidapi_host):
 
     response = requests.get(url, headers=headers, params=params)
 
-    # print(f"Hotel Search API Response Status: {response.status_code}")
-    # print(f"Hotel Search API Response Content: {response.text}")
 
     if response.status_code != 200:
         return {"error": "Failed to fetch hotel details"}

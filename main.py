@@ -93,7 +93,7 @@ def respond_to_user_input(user_input):
 
 def format_hotel_response(city, hotels):
     top_hotels = hotels[:5]
-    response = f"Here are the top {len(top_hotels)} hotels in {city.title()}\n"
+    response = f"Here are the top {len(top_hotels)} hotels in {city.title()}\n{'-'*30}\n"
     for hotel in top_hotels:
         name = hotel.get("hotel_name", "N/A")
         rating = hotel.get("review_score", "N/A")
@@ -101,7 +101,8 @@ def format_hotel_response(city, hotels):
         currency = hotel.get("currencycode", "")
         if isinstance(price, (float, int)):
             price = f"{price:.2f}"
-        response += f"\U0001F3E8 {name}\n⭐ Rating: {rating}\n\U0001F4B8 Price: {price} {currency}\n{'-'*30}\n"
+        response += f"{'-'*30}\n\U0001F3E8 {name}\n⭐ Rating: {rating}\n\U0001F4B8 Price: {price} {currency}\n{'-'*30}\n"
+    response +=f"{'-'*30}\n"
     response += "\nWould you like to apply more filters? (e.g., sort by rating, within 5 km, price between 1000 and 2000)"
     return response
 
